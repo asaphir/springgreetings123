@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: springproject
+  name: springproject
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springproject
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: springproject
+    spec:
+      containers:
+      - image: asaphir/springgreetings:latest
+        name: springboot
+        ports:
+        - containerPort: 8080  
+        resources: {}
+status: {}
